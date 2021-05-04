@@ -1,8 +1,7 @@
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.db import models
 from django.contrib.auth.models import (
-    AbstractBaseUser, BaseUserManager, PermissionsMixin)
-Create your models here.
+    AbstractBaseUser, BaseUserManager, PermissionsMixin,)
 
 
 class UserAccountManager(BaseUserManager):
@@ -39,7 +38,7 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     updated_at = models.DateTimeField(auto_now=True)
 
     USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['username']
+    REQUIRED_FIELDS = ['email']
 
     objects = UserAccountManager()
 
