@@ -1,6 +1,5 @@
 from userAuth.tests.test_setUp import BaseTestSetup
 from userAuth.models import UserAccount
-import json
 
 
 class TestViews(BaseTestSetup):
