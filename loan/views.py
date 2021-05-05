@@ -45,3 +45,9 @@ class LoanListView(generics.ListAPIView):
             return queryset
         else:
             return Loan.objects.all()
+
+
+class RetrievUpdateLoanView(generics.RetrieveUpdateAPIView):
+    serializer_class = LoanSerializer
+    permission_classes = [IsAdminUser]
+    queryset = Loan.objects.all()

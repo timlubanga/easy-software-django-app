@@ -19,4 +19,4 @@ class Loan(models.Model):
         Customer, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
-        return str(self.amount)
+        return str(self.transactionId)
