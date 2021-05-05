@@ -4,7 +4,8 @@ from userAuth.models import UserAccount
 
 
 class UserAdmin(admin.ModelAdmin):
-    list_display = ['username', 'email', 'created_at', "is_active", "is_superuser"]
+    list_display = ['id', 'username', 'email',
+                    'created_at', "is_active", "is_superuser"]
 
 
 admin.site.register(UserAccount, UserAdmin)

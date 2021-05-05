@@ -14,7 +14,7 @@ class Loan(models.Model):
     loanCode = models.UUIDField(null=True, blank=True,
                                 default=uuid.uuid4())
     loanDate = models.DateTimeField(auto_now_add=True)
-    loanDueDate = models.DateTimeField(null=False, blank=False)
+    loanDueDate = models.DateField(null=False, blank=False)
     customerId = models.ForeignKey(
         Customer, on_delete=models.CASCADE, null=True, blank=True)
 
