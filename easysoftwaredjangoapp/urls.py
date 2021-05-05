@@ -20,6 +20,7 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from userAuth.urls import authurlpatterns
+from loan.urls import loanurlpatterns
 
 
 schema_view = get_schema_view(
@@ -40,5 +41,6 @@ urlpatterns = [
          name='schema-swagger-ui'),
     path('documentation/', schema_view.with_ui('redoc',
          cache_timeout=0), name='redoc'),
-    path('auth/', include(authurlpatterns), name='auth')
+    path('auth/', include(authurlpatterns), name='auth'),
+    path('loan/', include(loanurlpatterns), name='loan')
 ]

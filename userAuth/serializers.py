@@ -36,26 +36,27 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
 
 
 class LoginSerializer(serializers.Serializer):
-    username=serializers.CharField()
+
+    username = serializers.CharField()
     password = serializers.CharField(
-    style={'input_type': 'password'}
-)
+        style={'input_type': 'password'}
+    )
+
     class Meta:
         fields = ["username", "password"]
 
     def save(self):
         login_username = self.validated_data.get('username', None)
         login_password = self.validated_data.get("password", None)
-        user =authenticate(password=login_password, username=login_username)
-        print(user)
+        user = authenticate(password=login_password, username=login_username)
+
         if not user:
             raise serializers.ValidationError(
                 "Please provide correct username or password")
         tokens = user.tokens()
         return {"tokens": tokens,
+                "customerId": user.id,
                 "email": user.email,
 
 
                 }
-
-

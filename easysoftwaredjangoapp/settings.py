@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'userAuth',
     'corsheaders',
     'drf_yasg',
+    'loan'
 
 ]
 
@@ -154,6 +155,13 @@ SIMPLE_JWT = {
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
 
 LANGUAGE_CODE = 'en-us'
 
