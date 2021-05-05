@@ -55,6 +55,7 @@ class LoginSerializer(serializers.Serializer):
                 "Please provide correct username or password")
         tokens = user.tokens()
         return {"tokens": tokens,
+                "username": user.username,
                 "customerId": user.id,
                 "email": user.email,
 
