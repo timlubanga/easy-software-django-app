@@ -24,4 +24,4 @@ Run the tests by running python manage.py test
 
 ## Apps documentation and Hosting
 
-The app is hosted on heroku please for the [APPs](https://easysoftwareapp.herokuapp.com/) link and [Documnetation](https://easysoftwareapp.herokuapp.com/documentation/)
+The app is hosted on heroku please for the [APP](https://easysoftwareapp.herokuapp.com/) link and [Documentation](https://easysoftwareapp.herokuapp.com/documentation/)
